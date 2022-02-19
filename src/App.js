@@ -4,32 +4,16 @@ import Categories from "./Categories";
 import items from "./data";
 
 function App() {
-  // const [categories, setMenuItems] = useState(items);
-  // const [items, setMenuItems] = useState(items);
   const [menuItems, setMenuItems] = useState(items);
 
-  const categoryHandler = (id) => {
-    console.log(id);
-    if (id === 1) {
+  const categoryHandler = (category) => {
+    if (category === "all") {
       setMenuItems(items);
+      return;
     }
 
-    if (id === 2) {
-      const breakfast = items.filter(
-        (item) => item.category === "breakfast"
-      );
-      setMenuItems(breakfast);
-    }
-
-    if (id === 3) {
-      const lunch = items.filter((item) => item.category === "lunch");
-      setMenuItems(lunch);
-    }
-
-    if (id === 4) {
-      const shakes = items.filter((item) => item.category === "shakes");
-      setMenuItems(shakes);
-    }
+    const currentCategory = items.filter((item) => item.category === category);
+    setMenuItems(currentCategory);
   };
   return (
     <main>
