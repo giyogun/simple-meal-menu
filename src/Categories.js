@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Categories = () => {
+const Categories = (props) => {
   return <div className="btn-container">
-    <button className="filter-btn">All</button>
-    <button className="filter-btn">Breakfast</button>
-    <button className="filter-btn">Lunch</button>
-    <button className="filter-btn">Shakes</button>
+    <button className="filter-btn"  onClick={() => props.onCategory(1)}>All</button>
+    <button className="filter-btn" onClick={() => props.onCategory(2)}>Breakfast</button>
+    <button className="filter-btn"  onClick={() => props.onCategory(3)}>Lunch</button>
+    <button className="filter-btn"  onClick={() => props.onCategory(4)}>Shakes</button>
   </div>
 };
 
